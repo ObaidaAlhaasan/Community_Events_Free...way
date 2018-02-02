@@ -19,7 +19,7 @@ We're using [Grunt](http://gruntjs.com/) for the asset pipeline.
 
 | Platform                       | Username | Password |
 | ------------------------------ | -------- | -------- |
-| https://drywall.herokuapp.com/ | root     | 123456   |
+| https://free---way.herokuapp.com/ | root     | 123456   |
 
 __Note:__ Event Community _ users_management sysytem and Event management ADD || DELETE || EDIT
 
@@ -71,7 +71,7 @@ Login. Customize. Enjoy.
 
 ## Features
 
- - Basic front end web pages.
+ -  front end web pages responsive.
  - Contact page has form to email.
  - Login system with forgot password and reset password.
  - Signup and Login with Facebook, Twitter, GitHub, Google and Tumblr.
