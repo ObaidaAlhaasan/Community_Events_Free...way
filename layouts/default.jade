@@ -1,0 +1,105 @@
+doctype html
+html
+  head
+    block head
+      title #{title}
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='/layouts/core.min.css?#{cacheBreaker}')
+    link(rel="shortcut icon", href="favicon.ico", type="image/x-icon")
+    link(rel='stylesheet', href='/layouts/animate.css?#{cacheBreaker}')
+    link(rel='stylesheet', href='/layouts/jquery.bxslider.min.css?#{cacheBreaker}')
+    
+    link(rel='stylesheet', href='/layouts/style.css?#{cacheBreaker}')
+
+    
+    block neck
+  body
+    div.navbar.navbar-default.navbar-fixed-top
+      div.container
+        div.navbar-header
+          a.navbar-brand(href='/')
+            img.navbar-logo(src='/media/logo-symbol-64x64.png', alt='Logo')
+            span.navbar-brand-label #{projectName}
+          button.navbar-toggle.collapsed(data-toggle='collapse', data-target='.my-navbar-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        div.navbar-collapse.my-navbar-collapse.collapse
+          ul.nav.navbar-nav
+            li: a(href='/') Home 
+              i( aria-hidden="true",style="color:mediumblue").fa.fa-home.fa-fw.fa-lg
+
+            li: a(href='/events') Events 
+              i( aria-hidden="true",style="color:gold").fa.fa-magic.fa-fw.fa-lg
+
+            li: a(href='/about/') About
+              i( aria-hidden="true" , style="color:#1fdada").fa.fa-comments.fa-fw.fa-lg
+          
+            li: a(href='/signup/') Sign Up
+              i( aria-hidden="true" , style="color:darkred").fa.fa-sign-in.fa-fw.fa-lg
+
+            li: a(href='/contact/' ) Contact
+              i( aria-hidden="true" ,style="color:darkblue").fa.fa-volume-control-phone.fa-fw.fa-lg
+          ul.nav.navbar-nav.navbar-right
+
+             
+            if user && user.username
+              li: a(href="/myevents/") 
+                i(aria-hidden="true" , style="color:#000989").fa.fa-fw.fa-lg.fa-calendar
+                | My Events
+              li: a(href="/events/add") 
+                i(aria-hidden="true" , style="color:#25c27f").fa.fa-fw.fa-lg.fa-plus
+                | ADD Event
+                
+              li: a(href='#{user.defaultReturnUrl}')
+                i( aria-hidden="true").fa.fa-user-secret.fa-fw.fa-lg
+                |  #{user.username}
+            else
+              li: a(href='/login/')
+                i( aria-hidden="true"  , style="color:crimson").fa.fa-hand-o-right.fa-fw.fa-lg
+                |  Sign In
+
+    div.page
+
+        != messages()
+
+        block body
+          
+          
+
+    div.footer
+      div.container
+        span.copyright.pull-right
+          |&#169; #{copyrightYear} #{copyrightName}
+        ul.links
+          li: a(href='/') Home
+          li: a(href='/contact/') Contact
+        div.clearfix
+
+    div.ajax-spinner
+      img(src='/media/ajax-pulse.gif', alt='Loading')
+    
+    
+    
+    
+    //if lte IE 9
+      script(src='/layouts/ie-sucks.min.js?#{cacheBreaker}')
+    
+    
+    script(src="http://code.jquery.com/jquery-3.3.1.min.js") 
+    script(src='/layouts/core.min.js?#{cacheBreaker}')
+    script(src='/layouts/jquery.nicescroll.min.js?#{cacheBreaker}')
+    
+    script(src="https://mdbootstrap.com/previews/docs/latest/js/mdb.min.js")
+
+    script(src='https://mdbootstrap.com/previews/docs/latest/js/jarallax.js')
+       
+    script(src='https://mdbootstrap.com/previews/docs/latest/js/jarallax-video.js')
+    
+    script(src='/layouts/wow.min.js?#{cacheBreaker}')
+    script(src='/layouts/main.js?#{cacheBreaker}')
+    
+    script.
+      new WOW().init();
+    
+    block feet

@@ -1,0 +1,79 @@
+extends ../../layouts/default
+block head
+    link(rel="shortcut icon", href="favicon.ico", type="image/x-icon")
+    link(rel='stylesheet', href='/layouts/style.css?#{cacheBreaker}')
+
+    title   My Events 
+
+
+block body
+    .container.animated.fadeInDownBig
+
+            #main.row
+                #rightPanel.col-xs-11.col-md-11.well
+                    .row
+                        .col-md-12
+                            h2
+                                | Edit your Event.
+                                small It&apos;s always easy
+                            |           
+                            hr.colorgraph                           
+                            form.form-group(action = "/events/update/#{event._id}"  , method = "post")
+
+                                      
+                                .row
+                                    .col-xs-4.col-sm-4.col-md-4
+                                        .form-group
+                                            label(for='name') Edit Name
+                                            |                 
+                                            input.form-control(required , value="#{event.name}",  type='text' , name="name")
+
+
+                                    .col-xs-4.col-sm-4.col-md-4
+                                        .form-group
+                                            label(for='venu') Edit Venu
+                                            |                 
+                                            input.form-control( required , value="#{event.venu}" type='text' , name="venu")
+
+                                    .col-xs-8.col-sm-4.col-md-8
+                                        .form-group
+                                            label(for='description') Edit Description
+                                            |                 
+                                            textarea.form-control( placeholder = "#{event.description}", name="description", cols="10", rows="5")
+                                    
+                                    .col-xs-4.clo-md-4
+                                        img.image-responsive.image-thumbnail(src="http://www.champions.com.ph/wp-content/uploads/2015/11/Celebration-party-time-clip-art-free-clipart-images-clipartix-2.jpg", alt="Image for a Party")
+
+
+
+                                .row
+                                    .col-xs-3.col-sm-3.col-md-3
+                                        .form-group
+                                            label(for='title') Set Date
+                                            |                 
+                                            input(   , value="#{event.Date}", required,type="date", name="date").form-control
+
+                                    .col-xs-3.col-sm-3.col-md-3
+                                        .form-group
+                                            label(required,for='startTime') Set Start Time
+                                            |                 
+                                            input(required,type="time", name="startTime").form-control
+                                    .col-xs-3.col-sm-3.col-md-3
+                                        .form-group
+                                            label(required,for='endTime') Set End Date
+                                            |                 
+                                            input(required,type="time", name="endTime").form-control
+    
+                                            
+                                hr.colorgraph
+                                a(href="/events").btn.btn-info
+                                    | Go Back    
+                                    i.fa.fa-fw.fa-arrow-circle-left
+                                    
+
+                                &nbsp;
+                                &nbsp;
+                                button.btn.btn-success( type='submit')
+                                    | Save Changes 
+                                    i.fa.fa-fw.fa-save
+                                

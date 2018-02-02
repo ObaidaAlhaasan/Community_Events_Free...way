@@ -1,0 +1,80 @@
+extends ../layouts/default
+
+block head
+  title Free...way 
+  link(rel="shortcut icon", href="favicon.ico", type="image/x-icon")
+  link(href='https://mdbootstrap.com/previews/docs/latest/css/mdb.min.css', rel='stylesheet')
+  link(rel='stylesheet', href='/views/index.min.css?#{cacheBreaker}')
+
+
+block neck
+  
+block body
+
+    .view.hm-white-light.jarallax(data-jarallax='{"speed": 0.2}', data-jarallax-video='https://www.youtube.com/watch?v=syBR4xiikcQ')
+        .full-bg-img
+          .container.flex-center
+            .row
+              .col-md-12.wow.fadeIn
+                .text-center.text-danger
+                  h1.display-2.mb-2.wow.fadeInDown(data-wow-delay='0.3s') Free...way always with our Love
+                  |                                 
+                  h5.font-up.mb-3.mt-1.font-bold.wow.fadeInDown(style='font-weight:bold; text-shadow: 0 0 8px #FFF, 0 -2px 12px #222, 0 -5px 15px #666;', data-wow-delay='0.4s')
+                    |Designed  && Development By ObaidaAlhassan &rarr; 
+                    a(href='#') https://goo.gl/nsVK7W
+                    br
+                    br
+                  
+      .py-2
+      .container-fluid
+        .row
+          .col-xl-12.col-lg-12.col-md-12.col-sm-12.col-xs-12
+            div.jumbotron
+            
+              h1 Create Events It's easy..
+              p.lead
+                | Welocme To Your Events Community
+              div
+                a.btn.btn-primary.btn(href='/signup/') Create an Account
+                | &nbsp;or&nbsp;
+                a.btn.btn-warning.btn(href='/login/forgot/') Reset Your Password
+          
+          .row
+            .col-xs-12.col-md-12
+                  div.col-sm-4
+                    div.panel.panel-default
+                      div.panel-body.wow.fadeInLeft
+                        h3 About Us
+                          i( aria-hidden="true").fa.fa-comments-o.fa-fw.fa-1x.text-center
+                        p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.us et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.
+                        a.btn.btn-info.btn-block(href='/about/') Learn More
+                  div.col-sm-4
+                    div.panel.panel-default
+                      div.panel-body.wow.fadeInUp
+                        h3 Sign Up
+                          i( aria-hidden="true").fa.fa-sign-in.fa-fw.fa-1x.text-center
+                        p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.us et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.
+                        a.btn.btn-success.btn-block(href='/signup/') Learn More
+                  div.col-sm-4
+                    div.panel.panel-default
+                      div.panel-body.wow.fadeInRight
+                        h3 Contact Us
+                          i( aria-hidden="true").fa.fa-volume-control-phone.fa-fw.fa-1x.text-center
+                        p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.us et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.
+                        a.btn.btn-primary.btn-block(href='/contact/') Learn More
+
+
+
+
+
+
+
+
+
+
+
+    //- .container
+    //-   .row
+    //-     .col-xs-12.col-md-12
+
+   

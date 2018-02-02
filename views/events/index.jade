@@ -1,0 +1,87 @@
+extends ../../layouts/default
+block head
+    title   View Events
+    link(rel='stylesheet', href='/layouts/eventsCandle.css?#{cacheBreaker}')
+block body
+  .c-body
+  each event,i in data
+        
+      main.c-main
+
+        .l-scroll    
+          .c-scroll
+            .c-scroll__holder.c-scroll__holder--top
+              .c-scroll__knob
+                .c-scroll__knob.c-scroll__knob--small.c-scroll__knob--left
+              |           
+              .c-scroll__roll.c-scroll__roll--top
+              |           
+              .c-scroll__knob
+                .c-scroll__knob.c-scroll__knob--small.c-scroll__knob--right
+            |         
+            .c-scroll__paper
+              .c-scroll__content
+                .c-scroll__text
+                    
+                  h2.c-scroll__heading Title : #{event.name}
+                  h3               
+                    p.c-scroll__paragraph
+                      | Posted By :
+                      strong
+                        badge.c-scroll__link(href='#', rel='noopener noreferrer') #{event.username}
+                  
+                  
+                  
+                  h4               
+                    p.c-scroll__paragraph(style=" width: 23em;word-wrap: break-word; ") Description :
+                      | #{event.description} Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos mollitia tenetur quam maiores esse, autem eveniet nesciunt voluptatibus reprehenderit debitis, molestias tempora fugiat necessitatibus? Accusantium similique excepturi exercitationem doloribus assumenda?
+                      strong
+                        a.c-scroll__link( href ="/events/show/#{event._id}" ,style="text-decoration: none" ,rel='noopener noreferrer')  Read more ...
+              
+                  p.c-scroll__paragraph
+                    h4 Date :
+                        strong #{event.Date.toLocaleString()}
+                                        
+
+            |         
+            .c-scroll__holder.c-scroll__holder--bottom
+              .c-scroll__knob
+                .c-scroll__knob.c-scroll__knob--small.c-scroll__knob--left
+              |           
+              .c-scroll__roll.c-scroll__roll--bottom
+              |           
+              .c-scroll__knob
+                .c-scroll__knob.c-scroll__knob--small.c-scroll__knob--right
+        |     
+        .c-candle
+          .c-flame
+            .c-flame__shadows
+            |         
+            .c-flame__top
+            |         
+            .c-flame__middle
+            |         
+            .c-flame__bottom
+          |       
+          .c-candle__wick
+          |       
+          .c-candle__wax
+
+
+
+//- 
+
+
+
+//-     .row
+        .col-xs-8.col-md-8
+            .page-header
+                h1 View Events 
+    
+            ul.events
+                    li
+                        strong #{event.name}   
+                        | Posted By #{event.username}
+                        p   #{event.description} 
+                        a(href="" ,class="btn btn-info") Read more...
+                    hr

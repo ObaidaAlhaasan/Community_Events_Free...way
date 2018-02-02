@@ -1,0 +1,48 @@
+extends ../../layouts/default
+block head
+    link(rel="shortcut icon", href="favicon.ico", type="image/x-icon")
+    link(rel='stylesheet', href='/layouts/add_style.css?#{cacheBreaker}')
+    title   My Events 
+
+
+block body
+  .container
+
+    if   data 
+      .table-responsive.animated.bounceIn
+        table.table.table-hover
+          thead
+          
+            tr
+              th  Name:
+              th  Description
+              th  Venu
+              th  StartTime  
+              th  EndTime  
+              th  Date
+              th  Controls
+
+          tbody
+            each event,i in data
+              tr
+                td  #{event.name}
+                td(style=" width: 20em;word-wrap: break-word; ")    #{event.description} Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi dignissimos porro, voluptate maxime tempora delectus quam nam temporibus blanditiis culpa, repellendus alias eveniet sint rerum ratione, consequuntur ducimus rem quibusdam.
+                td  #{event.venu}
+                td  #{event.startTime} 
+                td  #{event.endTime}
+                td  #{event.Date.toLocaleString()}
+                td    
+                  a(href="/events/edit/#{event._id}"  , style="margin-top: 5px;display: inline-block;width: 72px;padding: 6px;margin-bottom: 5px;").btn.btn-info Edit
+                    i(aria-hidden="true").fa.fa-fw.fa-edit  
+                
+                  a(href="/events/delete/#{event._id}", style="display: inline-block;width: 71px;margin-left: 2px;").btn.btn-danger  Delete
+                    i(aria-hidden="true").fa.fa-fw.fa-close 
+
+
+
+
+
+
+    else      
+      h1 No Event To Display May ADD One ..!
+            
